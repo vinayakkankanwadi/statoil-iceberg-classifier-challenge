@@ -1,5 +1,5 @@
-# statoil-iceberg-classifier-challenge
-Statoil Iceberg Classifier Challenge
+# Statoil Iceberg Classifier Challenge
+Competition: statoil-iceberg-classifier-challenge
 
 ## TOC
 - [Working with Kaggle](https://github.com/floydwch/kaggle-cli)
