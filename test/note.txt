@@ -1,0 +1,25 @@
+############################### #plot image
+
+%matplotlib inline
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import signal
+
+train = pd.read_json(TRAIN_PATH)
+
+def drawImg(img):
+    plt.imshow(img,cmap='gist_heat')
+    plt.show()  
+    
+indexs=np.where(train['is_iceberg']==0)
+indexi=np.where(train['is_iceberg']==1)
+
+img = np.reshape(train['band_1'][indexs[0][1]], (75,75))
+drawImg(img)
+img = np.reshape(train['band_2'][indexs[0][1]], (75,75))
+drawImg(img)
+img = np.reshape(train['band_1'][indexi[0][2]], (75,75))
+drawImg(img)
+img = np.reshape(train['band_2'][indexi[0][2]], (75,75))
+drawImg(img)
