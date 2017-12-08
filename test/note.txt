@@ -23,3 +23,15 @@ img = np.reshape(train['band_1'][indexi[0][2]], (75,75))
 drawImg(img)
 img = np.reshape(train['band_2'][indexi[0][2]], (75,75))
 drawImg(img)
+
+
+band1 = np.array([np.array(band).astype(np.float32).reshape(75, 75) for band in train["band_1"]])
+print(band1.shape)
+band2 = np.array([np.array(band).astype(np.float32).reshape(75, 75) for band in train["band_2"]])
+print(band2.shape)
+r = band1[0]
+g = band2[0]
+b = np.divide(g, r, out=np.zeros_like(r), where=g!=0)
+rgb = np.dstack((r, g, b.astype(np.uint8)))
+print(b.shape)
+print(rgb.shape)
